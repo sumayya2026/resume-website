@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resume & Bio-data - Sumayya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f6f9fa;
+            margin: 30px;
+        }
+        header {
+            background: #007acc;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        nav {
+            margin-top: 10px;
+        }
+        nav button {
+            background: #fff;
+            border: none;
+            color: #007acc;
+            padding: 8px 16px;
+            margin-right: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        nav button.active {
+            background: #005a99;
+            color: #fff;
+        }
+        section {
+            background: #fff;
+            padding: 24px;
+            margin-top: 20px;
+            border-radius: 8px;
+            display: none;
+        }
+        section.active {
+            display: block;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #ccc;
+        }
+        footer {
+            margin-top: 30px;
+            color: #555;
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            var sections = document.querySelectorAll('section');
+            var buttons = document.querySelectorAll('nav button');
+            sections.forEach(function(section) {
+                section.classList.remove('active');
+            });
+            buttons.forEach(function(button) {
+                button.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            document.getElementById('btn-' + sectionId).classList.add('active');
+        }
+        window.onload = function() {
+            // Default: Show Resume
+            showSection('resume');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Sumayya</h1>
+        <p>Computer Science and Engineering Student</p>
+        <nav>
+            <button id="btn-resume" onclick="showSection('resume')">Resume</button>
+            <button id="btn-biodata" onclick="showSection('biodata')">Bio-data</button>
+        </nav>
+    </header>
+
+    <section id="resume">
+        <h2>Resume</h2>
+        <h3>Education</h3>
+        <ul>
+            <li>B.E. in Computer Science, VTU University, 2023–2027</li>
+        </ul>
+        <h3>Skills</h3>
+        <ul>
+            <li>HTML, CSS, JavaScript</li>
+            <li>AI/ML Basics</li>
+            <li>Web Development</li>
+        </ul>
+        <h3>Projects</h3>
+        <ul>
+            <li>AI Travel Itinerary Planner</li>
+            <li>Registration Form Web App</li>
+        </ul>
+        <footer>
+            <p>Contact: sumayya@email.com | Location: Karnataka, India</p>
+        </footer>
+    </section>
+
+    <section id="biodata">
+        <h2>Bio-data</h2>
+        <table>
+            <tr><th>Name</th><td>Sumayya</td></tr>
+            <tr><th>Date of Birth</th><td>1 Jan 2005</td></tr>
+            <tr><th>Gender</th><td>Female</td></tr>
+            <tr><th>Nationality</th><td>Indian</td></tr>
+            <tr><th>Contact</th><td>sumayya@email.com</td></tr>
+            <tr><th>Address</th><td>Karnataka, India</td></tr>
+        </table>
+        <footer>
+            <p>Last updated: November 2025</p>
+        </footer>
+    </section>
+</body>
+</html>
